@@ -1,6 +1,7 @@
 package com.niit.model;
 
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,53 +9,60 @@ import javax.persistence.Id;
 
 @Entity
 public class Forum {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int forumid;
-	private String forumtitle;
-	private String forumcontent;
-	private String forumUserName;
-	private Date creationdatetime;
+	private int postId;
 	private String category;
+	private String postTitle;
+	private String postContent;
+	private Date creationDate;
+	private String username;
 
-	public int getForumid() {
-		return forumid;
+	@Override
+	public String toString() {
+		return "Forum [id=" + postId + ", Title=" + postTitle + ", Content=" + postContent + ", Creation Date="
+				+ creationDate + "]";
 	}
 
-	public void setForumid(int forumid) {
-		this.forumid = forumid;
+	public int getPostId() {
+		return postId;
 	}
 
-	public String getForumtitle() {
-		return forumtitle;
+	public void setPostId(int postId) {
+		this.postId = postId;
 	}
 
-	public void setForumtitle(String forumtitle) {
-		this.forumtitle = forumtitle;
+	public String getPostTitle() {
+		return postTitle;
 	}
 
-	public String getForumcontent() {
-		return forumcontent;
+	public void setPostTitle(String postTitle) {
+		this.postTitle = postTitle;
 	}
 
-	public void setForumcontent(String forumcontent) {
-		this.forumcontent = forumcontent;
+	public String getPostContent() {
+		return postContent;
 	}
 
-	public String getForumUserName() {
-		return forumUserName;
+	public void setPostContent(String postContent) {
+		this.postContent = postContent;
 	}
 
-	public void setForumUserName(String forumUserName) {
-		this.forumUserName = forumUserName;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public Date getCreationdatetime() {
-		return creationdatetime;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 
-	public void setCreationdatetime(Date creationdatetime) {
-		this.creationdatetime = creationdatetime;
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getCategory() {
@@ -64,5 +72,4 @@ public class Forum {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
 }
